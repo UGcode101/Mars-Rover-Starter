@@ -1,10 +1,11 @@
 class Message {
-  constructor(name, commands) {
-    this.name = name;
+  constructor(name, commands = []) {
     if (!name) {
-      throw Error("Message name not provided.");
+      throw new Error("Message name not provided.");
     }
+    this.name = name;
     this.commands = commands;
   }
 }
+
 module.exports = Message;
